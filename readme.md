@@ -35,11 +35,8 @@ A secure, interactive command-line login system built in Go. It supports user re
 4. **Run the CLI Application**:
    Because this is an interactive CLI, you must run it interactively (`-it`) attached to the host network (or passing the proper DB_HOST) so it can reach the database container.
    ```bash
-   # On Linux / macOS:
-   docker run -it --rm --network host -e DB_HOST=localhost mycli
-
-   # On Windows / Docker Desktop:
-   docker run -it --rm -e DB_HOST=host.docker.internal mycli
+   # Run attached to the compose network (Works best on all operating systems):
+   docker run -it --rm --network go-cli_default -e DB_HOST=db mycli
    ```
 
 ## Usage/Commands
